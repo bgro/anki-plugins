@@ -16,16 +16,24 @@ from anki.hooks import wrap
 from anki.template.furigana import kana
 from aqt.reviewer import Reviewer
 
+## Constants
+
+# Model name used for Multiple Choice Cards implemented by this extension
+MULTIPLE_TRIGGER_TYPE_NAME = "MultipleChoice"
+
+# Placeholder string for buttons: place the string defined below
+# in the card question section to display at that location the multiple
+# choice buttons
+
+BUTTON_PLACEHOLDER = "[[[buttons]]]"
+
+
+
 lastCardId = 0
 idxs = range(1)
 showingQuestion = 0
 numAns = 0
 
-MULTIPLE_TRIGGER_TYPE_NAME = "Multiple"
-
-BUTTON_PLACEHOLDER = "[[[buttons]]]"
-
-TYPE_CHECK_TRIGGER = "Type"
 
 # The following hook around the corrector gives us access
 # to the given answer and the correct answer for a single {{type: XXX}} field.
@@ -92,7 +100,7 @@ def filterQuestion(self,buf):
           except:
               pass
 
-    #showWarning("%s\n%s" % (ansfld,ans))
+
     txt = buf
     
 
@@ -132,7 +140,7 @@ def filterQuestion(self,buf):
                         # He clicked on the correct answer, so show the button green
                         replacement_text.append("<input type=\"button\" style='background-color: green' value='"+ans[x]+"'/> " )
                     else:
-                        # He clicked on thw wrong answer: show in red
+                        # He clicked on the wrong answer: show in red
                         replacement_text.append("<input type=\"button\" style='background-color: red' value='"+ans[x]+"'/>" )
                 else:
                     # This is an answer the user did not click on
@@ -172,7 +180,7 @@ def myAnswerButtons(self):
     card = self.card
     modelname = card._note._model["name"]
     
-    if not (MULTIPLE_TRIGGER_TYPE_NAME in modelname or TYPE_CHECK_TRIGGER in modelname):
+    if not (MULTIPLE_TRIGGER_TYPE_NAME in modelname):
         return txt
 
     if MULTIPLE_TRIGGER_TYPE_NAME in modelname:
@@ -187,16 +195,9 @@ def myAnswerButtons(self):
             txt = txt.replace("<td","<!--td",1);
             txt = txt.replace("/td>","/td-->",1);
         if (ans >= 1):
-            txt = txt.replace("<td","<!--td");
-            txt = txt.replace("/td>","/td-->");
-            txt = txt.replace("<!--td","<td",1);
-            txt = txt.replace("/td-->","/td>",1);
-    elif TYPE_CHECK_TRIGGER in modelname:
-        if self.typed_given == self.typed_correct:
-            # correct answer, remove "Again" button
-            txt = txt.replace("<td","<!--td",1);
-            txt = txt.replace("/td>","/td-->",1);
-        else:
+            # wrong answer: remove all buttons but the "Again" button
+            # by first removing all buttons and then selectively enabling
+            # the very first button
             txt = txt.replace("<td","<!--td");
             txt = txt.replace("/td>","/td-->");
             txt = txt.replace("<!--td","<td",1);
