@@ -182,7 +182,7 @@ gh-pages:
 	  git checkout gh-pages &&\
 	  git checkout master $(GH_PAGES_SOURCES) &&\
 	  git reset HEAD &&\
-	  cd doc &&\
+	  cd docs &&\
 	  make html && \
 	  mv -fv _build/html/* ../ &&\
 	  rm -rf $(GH_PAGES_SOURCES)  &&\
