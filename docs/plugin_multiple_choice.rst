@@ -53,4 +53,4 @@ at the `Github page`_ for this plugin.
 .. _Github page: http://bgro.github.io/anki-plugins/plugin_multiple_choice.html
 
 
-.. _Multi-choice Quiz" plugin: https://ankiweb.net/shared/info/4016858745
+.. _"Multi-choice Quiz" plugin: https://ankiweb.net/shared/info/4016858745
