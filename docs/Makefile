@@ -7,7 +7,7 @@ SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = _build
 
-GH_PAGES_SOURCES = doc AUTHORS.rst CONTRIBUTING.rst HISTORY.rst README.rst
+GH_PAGES_SOURCES = docs AUTHORS.rst CONTRIBUTING.rst HISTORY.rst README.rst
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
