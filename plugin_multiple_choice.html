@@ -73,7 +73,57 @@
             
   <div class="section" id="multiple-choice-quiz-in-anki">
 <h1>Multiple Choice Quiz in Anki<a class="headerlink" href="#multiple-choice-quiz-in-anki" title="Permalink to this headline">¶</a></h1>
-<p>Todo</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The plugin supports the creation of multiple-choice questions. The possible
+answers (once correct and several wrong ones) are displayed as click-able
+buttons.</p>
+<p>The plugin further only allows the user to click any other than the
+&#8220;Again&#8221; repetition button if the correct answer has been provided; if
+a wrong answer has been given, only the &#8220;Again&#8221; button is displayed
+along with the correct answer.</p>
+<p>This code for this plugin was based on the <a href="#id1"><span class="problematic" id="id2">`&#8221;Multi-choice Quiz&#8221; plugin`_</span></a> but
+by now has been almost completely rewritten in order to make the plugin
+more stable.</p>
+</div>
+<div class="section" id="usage-instructions">
+<h2>Usage instructions<a class="headerlink" href="#usage-instructions" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Create a card model whose name contains the string <tt class="docutils literal"><span class="pre">MultipleChoice</span></tt></p>
+</li>
+<li><p class="first">In that model, define the following fields:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Answer</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Distractor1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Distractor2</span></tt></li>
+<li>... (up to at most <tt class="docutils literal"><span class="pre">Distractor9</span></tt>)</li>
+</ul>
+<p>You probably want to add a field <tt class="docutils literal"><span class="pre">Question</span></tt> for posing the question,
+but it is up to you how you design your card.</p>
+</li>
+<li><p class="first">When defining the card layout, use the string <tt class="docutils literal"><span class="pre">[[[buttons]]]</span></tt> to
+determine the place at which the answer buttons will be displayed:
+- when the question is shown, at this place the buttons with</p>
+<blockquote>
+<div><p>the possible answers will be shown</p>
+</div></blockquote>
+<ul class="simple">
+<li>when the answer is shown, at this place the buttons will be
+shown with the correct answer button highlighted in green and a
+possible wrongly pressed answer button highlighted in red.</li>
+</ul>
+</li>
+<li><p class="first">When creating a card, fill in the correct answer into field <tt class="docutils literal"><span class="pre">Answer</span></tt>
+and fill in as many distractors as you like in the remaining fields
+(you can leave distractor fields empty, if you want)</p>
+</li>
+</ul>
+</div>
+<div class="section" id="further-information">
+<h2>Further information<a class="headerlink" href="#further-information" title="Permalink to this headline">¶</a></h2>
+<p>For further information please view the documentation provided
+at the <a class="reference external" href="http://bgro.github.io/anki-plugins/plugin_multiple_choice.html">Github page</a> for this plugin.</p>
+</div>
 </div>
 
 
