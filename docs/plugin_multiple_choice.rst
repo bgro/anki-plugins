@@ -15,9 +15,23 @@ buttons.
 
 
 The plugin further only allows the user to click any other than the
-"Again" repetition button if the correct answer has been provided; if
+"Again" repetition button if the correct answer has been provided.
+
+.. figure:: images/multiple_choice_example_right_answer.png
+   :scale: 50 %
+
+   Example: correct answer has been given
+
+
+If
 a wrong answer has been given, only the "Again" button is displayed
-along with the correct answer.
+along with the correct answer:
+
+.. figure:: images/multiple_choice_example_wrong_answer.png
+   :scale: 50 %
+
+   Example: wrong answer has been given
+
 
 This code for this plugin was based on the `"Multi-choice Quiz" plugin`_ but
 by now has been almost completely rewritten in order to make the plugin 
@@ -60,15 +74,5 @@ Usage instructions
 - When creating a card, fill in the correct answer into field ``Answer``
   and fill in as many distractors as you like in the remaining fields
   (you can leave distractor fields empty, if you want)
-
-
-Further information
--------------------
-
-For further information please view the documentation provided
-at the `Github page`_ for this plugin.
-
-.. _Github page: http://bgro.github.io/anki-plugins/plugin_multiple_choice.html
-
 
 .. _"Multi-choice Quiz" plugin: https://ankiweb.net/shared/info/4016858745
