@@ -189,8 +189,9 @@ gh-pages:
 	  make html && \
 	  echo "Syncing new html sources." &&\
 	  rsync -a _build/html/* ../ &&\
+	  cd .. &&\
 	  echo "Removing source files" &&\
 	  rm -rf $(GH_PAGES_SOURCES)  &&\
 	  echo "Adding to git and checking in" &&\
 	  git add -A &&\ 
-	  git ci -m "Generated gh-pages for `git log master -1 --pretty=short --abbrev-commit`" && git push origin gh-pages ; git checkout master
+	  git commit -m "Generated gh-pages for `git log master -1 --pretty=short --abbrev-commit`" && git push origin gh-pages ; git checkout master
