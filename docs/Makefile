@@ -184,7 +184,7 @@ gh-pages:
 	  git reset HEAD &&\
 	  cd docs &&\
 	  make html && \
-	  cp -fv _build/html/* ../ &&\
+	  rsync -a _build/html/* ../ &&\
 	  rm -rf $(GH_PAGES_SOURCES)  &&\
 	  git add -A &&\ 
 	  git ci -m "Generated gh-pages for `git log master -1 --pretty=short --abbrev-commit`" && git push origin gh-pages ; git checkout master

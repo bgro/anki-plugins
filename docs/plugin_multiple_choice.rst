@@ -17,6 +17,18 @@ This code for this plugin was based on the `"Multi-choice Quiz" plugin`_ but
 by now has been almost completely rewritten in order to make the plugin 
 more stable.
 
+Installation
+------------
+
+- Installation via Anki: in Anki, chose from menu ``Tools > Add-Ons > Browse&Install``
+  and enter number ``1300062419``.
+
+- Direct installation: download the `plugin code`_, and save it to the ``addons``
+  folder in your ``Anki`` folder.
+
+.. _plugin code: https://raw.githubusercontent.com/bgro/anki-plugins/master/src/MultipleChoiceQuiz.py
+ 
+
 Usage instructions
 ------------------
 
