@@ -179,12 +179,18 @@ pseudoxml:
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
 gh-pages:
 	cd .. &&\
+	  echo "Switching to gh-pages branch" &&\
 	  git checkout gh-pages &&\
+	  echo "Getting source files from master branch" &&\
 	  git checkout master $(GH_PAGES_SOURCES) &&\
 	  git reset HEAD &&\
 	  cd docs &&\
+	  echo "Making html" &&\
 	  make html && \
+	  echo "Syncing new html sources." &&\
 	  rsync -a _build/html/* ../ &&\
+	  echo "Removing source files" &&\
 	  rm -rf $(GH_PAGES_SOURCES)  &&\
+	  echo "Adding to git and checking in" &&\
 	  git add -A &&\ 
 	  git ci -m "Generated gh-pages for `git log master -1 --pretty=short --abbrev-commit`" && git push origin gh-pages ; git checkout master
