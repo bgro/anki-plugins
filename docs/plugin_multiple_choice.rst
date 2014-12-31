@@ -8,6 +8,12 @@ The plugin supports the creation of multiple-choice questions. The possible
 answers (once correct and several wrong ones) are displayed as click-able
 buttons.
 
+.. figure:: images/multiple_choice_example_question.png
+   :scale: 50 %
+
+   Example multiple choice card
+
+
 The plugin further only allows the user to click any other than the
 "Again" repetition button if the correct answer has been provided; if
 a wrong answer has been given, only the "Again" button is displayed
