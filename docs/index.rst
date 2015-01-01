@@ -1,12 +1,20 @@
-.. complexity documentation master file, created by
-   sphinx-quickstart on Tue Jul  9 22:26:36 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
 About
 =====
 
-.. include:: ../README.rst
+`Anki`_ is a great program for learning flashcards. It allows
+customization via Python-based plugins. This web page documents my
+plugins for Anki.
+
+.. _Anki: http://ankisrs.net/
+
+For further information, please refer to the documentation page
+of each plugin:
+
+- :ref:`plugin_multiple_choice`
+
+- :ref:`plugin_force_correct_typein`
+
 
 .. toctree::
    :maxdepth: 2
