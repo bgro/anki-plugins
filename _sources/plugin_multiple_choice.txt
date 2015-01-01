@@ -1,3 +1,5 @@
+.. _plugin_multiple_choice:
+
 Multiple Choice Quiz in Anki
 ============================
 
@@ -15,7 +17,7 @@ buttons.
 
 
 The plugin further only allows the user to click any other than the
-"Again" repetition button if the correct answer has been provided.
+"Again" ease button if the correct answer has been provided.
 
 .. figure:: images/multiple_choice_example_right_answer.png
    :scale: 50 %
